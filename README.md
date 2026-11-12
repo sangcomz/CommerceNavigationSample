@@ -111,32 +111,6 @@ flowchart TD
     CONTRACTS --> CORE[core]
 ```
 
-## 실행
-
-**JDK 21 · Android SDK 37 · Android Studio**
-
-```sh
-./gradlew :app:assembleDebug testDebugUnitTest checkModuleDependencies lintDebug
-ANDROID_SERIAL=emulator-5554 ./gradlew :app:connectedDebugAndroidTest
-```
-
-| 구성 | 버전 |
-|---|---|
-| Gradle / Android Gradle Plugin | 9.4.1 / 9.2.0 |
-| Kotlin Compose plugin / KSP | 2.3.10 |
-| Navigation 3 | 1.2.1 |
-| Hilt | 2.60.1 |
-| Compose BoM | 2026.08.00 |
-| minSdk / targetSdk / compileSdk | 24 / 36 / 37 |
-
-## 범위
-
-실제 서버·결제·배송·Activity 혼합 탐색은 구현하지 않았으며, 상품·장바구니·주문 데이터는 메모리에만 보관하므로 프로세스 종료 후 경로가 복원되어도 장바구니와 주문 데이터는 초기화됩니다.
-
-- [실행한 검증과 제한 사항](docs/VERIFICATION.md)
-- [Navigation 3 공식 모듈화 가이드](https://developer.android.com/guide/navigation/navigation-3/modularize)
-- [Navigation 3 공식 상태 관리 가이드](https://developer.android.com/guide/navigation/navigation-3/save-state)
-
 ## 화면
 
 | 상품 목록 | 상품 상세 | 장바구니 |
