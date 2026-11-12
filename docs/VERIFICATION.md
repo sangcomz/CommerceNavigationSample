@@ -1,6 +1,6 @@
 # 검증 결과
 
-**최종 코드 기준: 디버그 빌드·단위 테스트 10개·기기 테스트 2개·모듈 의존성 검사 통과, 린트 오류 0개·경고 11개.**
+**최종 코드 기준: 디버그 빌드·단위 테스트 6개·기기 테스트 2개·모듈 의존성 검사 통과, 린트 오류 0개·경고 11개.**
 
 ## 실행 명령
 
@@ -13,9 +13,9 @@ ANDROID_SERIAL=emulator-5554 ./gradlew :app:assembleDebug testDebugUnitTest chec
 | 명령 종료 코드 | 0 |
 | 디버그 APK | app/build/outputs/apk/debug/app-debug.apk 생성 |
 | 모듈 의존성 검사 | 위반 없음 |
-| 단위 테스트 | 10개 통과, 실패·오류·건너뜀 0개 |
+| 단위 테스트 | 6개 통과, 실패·오류·건너뜀 0개 |
 | 기기 테스트 | 2개 통과, 실패·오류·건너뜀 0개 |
-| 기기 환경 | medium_phone AVD, Android 16 / API 36, 1080×2400, density 420 |
+| 기기 환경 | medium_phone AVD, Android 16 / API 36, 720×1600, density 280 |
 | Gradle JVM 조건 | JDK 21 |
 | 린트 범위 | 전체 Android 모듈의 debug variant |
 | 린트 결과 | 오류 0개, 경고 11개 |
@@ -24,7 +24,6 @@ ANDROID_SERIAL=emulator-5554 ./gradlew :app:assembleDebug testDebugUnitTest chec
 
 | 대상 | 확인 내용 |
 |---|---|
-| Navigation3Navigator 단위 테스트 4개 | 인자별 백스택, 동일 최상단 중복 방지, 주문 완료 후 정리, 루트 보호, 홈 이동, 지원하지 않는 Route 실패 시 기존 스택 보존 |
 | 상품 탐색 단위 테스트 2개 | 한 번의 타입 등록으로 서로 다른 상품 ID 처리, 내부 리뷰 Route 등록, 경로 인자 직렬화 |
 | 장바구니 단위 테스트 2개 | 같은 상품 추가 시 수량 증가, 수량 0 이하 시 항목 제거 |
 | 주문 단위 테스트 2개 | 빈 장바구니 주문 방지, 주문 스냅샷 유지, 장바구니 초기화, 중복 주문 방지 |
@@ -44,7 +43,7 @@ ANDROID_SERIAL=emulator-5554 ./gradlew :app:assembleDebug testDebugUnitTest chec
 
 - 릴리스 빌드와 API 24 기기 실행은 검증하지 않음.
 - Activity 재생성은 검증했으며, 프로세스 종료 후 장바구니·주문 데이터 복구는 구현하지 않음.
-- Navigator의 계약 분리를 검증했으며, 실제 Activity 혼합 탐색 구현은 포함하지 않음.
+- 피처별 화면 등록과 Navigation 3 백스택 이동을 검증했으며, 실제 Activity 혼합 탐색 구현은 포함하지 않음.
 - 실제 서버·결제·배송은 포함하지 않음.
 
 ## 화면 확인

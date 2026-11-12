@@ -1,9 +1,9 @@
 package io.github.sangcomz.commercenavigation.feature.product.presentation
 
 import androidx.navigation3.runtime.NavKey
+import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.entryProvider
 import io.github.sangcomz.commercenavigation.core.navigation.NavigationRoute
-import io.github.sangcomz.commercenavigation.core.navigation.Navigator
 import io.github.sangcomz.commercenavigation.feature.common.cart.CartRouteProvider
 import io.github.sangcomz.commercenavigation.feature.product.presentation.navigation.ProductEntryPointFactory
 import io.github.sangcomz.commercenavigation.feature.product.presentation.navigation.ProductRouteProviderImpl
@@ -21,22 +21,19 @@ class ProductNavigationTest {
 
     @Test fun oneRegistrationResolvesDifferentProductArguments() {
         val routes = ProductRouteProviderImpl()
-        val navigator = object : Navigator {
-            override fun navigate(route: NavigationRoute) = Unit
-            override fun back() = Unit
-            override fun finishFlow(route: NavigationRoute) = Unit
-            override fun home() = Unit
-        }
+        val backStack = NavBackStack<NavKey>(routes.productListRoute())
         val factory = ProductEntryPointFactory(object : CartRouteProvider {
             override fun cartRoute(): NavigationRoute = Cart
         })
-        val provider = entryProvider<NavKey> { factory.register(this, navigator) }
+        val entries = factory.create()
+        assertEquals(3, entries.size)
+        val provider = entryProvider<NavKey> { entries.forEach { entry -> entry(this, backStack) } }
         val first = routes.productDetailRoute("mug-01")
         val second = routes.productDetailRoute("bag-02")
-        assertNotEquals(provider(first as NavKey).contentKey, provider(second as NavKey).contentKey)
-        assertEquals(provider(first as NavKey).contentKey, provider(first as NavKey).contentKey)
+        assertNotEquals(provider(first).contentKey, provider(second).contentKey)
+        assertEquals(provider(first).contentKey, provider(first).contentKey)
         val reviews = ProductReviewsRoute("bag-02")
-        assertNotEquals(provider(second as NavKey).contentKey, provider(reviews).contentKey)
+        assertNotEquals(provider(second).contentKey, provider(reviews).contentKey)
     }
 
     @Test fun routeArgumentsSurviveSerialization() {

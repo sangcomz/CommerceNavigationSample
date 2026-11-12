@@ -2,13 +2,12 @@ package io.github.sangcomz.commercenavigation.feature.product.presentation.navig
 
 import io.github.sangcomz.commercenavigation.core.navigation.NavigationRoute
 import kotlinx.serialization.Serializable
-import androidx.navigation3.runtime.NavKey
 
 @Serializable
-data object ProductListRoute : NavigationRoute, NavKey
+data object ProductListRoute : NavigationRoute
 
 @Serializable
-data class ProductDetailRoute(val productId: String) : NavigationRoute, NavKey
+data class ProductDetailRoute(val productId: String) : NavigationRoute
 
 @Serializable
-internal data class ProductReviewsRoute(val productId: String) : NavigationRoute, NavKey
+internal data class ProductReviewsRoute(val productId: String) : NavigationRoute

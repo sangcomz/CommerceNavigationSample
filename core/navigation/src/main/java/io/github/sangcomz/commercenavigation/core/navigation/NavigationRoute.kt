@@ -1,3 +1,5 @@
 package io.github.sangcomz.commercenavigation.core.navigation
 
-interface NavigationRoute
+import androidx.navigation3.runtime.NavKey
+
+interface NavigationRoute : NavKey

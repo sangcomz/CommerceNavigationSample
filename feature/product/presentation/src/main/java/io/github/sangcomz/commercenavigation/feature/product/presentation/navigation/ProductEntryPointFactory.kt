@@ -1,9 +1,7 @@
 package io.github.sangcomz.commercenavigation.feature.product.presentation.navigation
 
-import androidx.navigation3.runtime.EntryProviderScope
-import androidx.navigation3.runtime.NavKey
 import io.github.sangcomz.commercenavigation.core.navigation.FeatureEntryPointFactory
-import io.github.sangcomz.commercenavigation.core.navigation.Navigator
+import io.github.sangcomz.commercenavigation.core.navigation.FeatureEntryPoint
 import javax.inject.Inject
 import io.github.sangcomz.commercenavigation.feature.common.cart.CartRouteProvider
 import io.github.sangcomz.commercenavigation.feature.product.presentation.list.ProductListScreen
@@ -13,25 +11,32 @@ import io.github.sangcomz.commercenavigation.feature.product.presentation.review
 class ProductEntryPointFactory @Inject constructor(
     private val cartRoutes: CartRouteProvider
 ) : FeatureEntryPointFactory {
-    override fun register(builder: EntryProviderScope<NavKey>, navigator: Navigator) {
-        with(builder) {
+    override fun create(): List<FeatureEntryPoint> = listOf(
+        { backStack ->
             entry<ProductListRoute> {
                 ProductListScreen(
-                    onOpenProduct = { navigator.navigate(ProductDetailRoute(it)) },
-                    onOpenCart = { navigator.navigate(cartRoutes.cartRoute()) }
+                    onOpenProduct = { backStack.add(ProductDetailRoute(it)) },
+                    onOpenCart = { backStack.add(cartRoutes.cartRoute()) }
                 )
             }
+        },
+        { backStack ->
             entry<ProductDetailRoute> { route ->
                 ProductDetailScreen(
                     productId = route.productId,
-                    onOpenReviews = { navigator.navigate(ProductReviewsRoute(route.productId)) },
-                    onOpenCart = { navigator.navigate(cartRoutes.cartRoute()) },
-                    onBack = navigator::back
+                    onOpenReviews = { backStack.add(ProductReviewsRoute(route.productId)) },
+                    onOpenCart = { backStack.add(cartRoutes.cartRoute()) },
+                    onBack = { backStack.removeLastOrNull() }
                 )
             }
+        },
+        { backStack ->
             entry<ProductReviewsRoute> { route ->
-                ProductReviewsScreen(productId = route.productId, onBack = navigator::back)
+                ProductReviewsScreen(
+                    productId = route.productId,
+                    onBack = { backStack.removeLastOrNull() }
+                )
             }
         }
-    }
+    )
 }
