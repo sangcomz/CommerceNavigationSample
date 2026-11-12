@@ -122,11 +122,11 @@
   "artifacts": [
     {
       "path": "docs/animations/navigation-flow.gif",
-      "sha256": "b514f09b71cf4971990ff1f9e682311aba47f3684e59d1d9cc1e03a346816938"
+      "sha256": "b7dc0789be9d8632f3f9e9d0a33efd74971ca78c970febdee46d28e1480230c2"
     },
     {
       "path": "docs/animations/registration-flow.gif",
-      "sha256": "c6c42fbdec7eea5a0cbae6804b8f3d159cd76dc0bdaba8b1c21fdac376da3037"
+      "sha256": "2d26ae57e2c6d09ccd705820fb15f8caa5a91028a4b16358b5c9571eff42daab"
     }
   ]
 }
