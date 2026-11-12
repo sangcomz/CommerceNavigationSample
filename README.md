@@ -22,6 +22,8 @@ interface FeatureEntryPointFactory {
 
 FeatureEntryPoint는 Navigation 3의 entry<Route>를 등록하는 함수 타입입니다.
 
+![화면 등록 코드 흐름](docs/animations/registration-flow.gif)
+
 ```text
 ProductNavigationModule의 @IntoSet
     → Set<FeatureEntryPointFactory>
@@ -51,6 +53,10 @@ Route는 @Serializable data class로 정의하고 특정 인자 값이 아닌 �
 NavBackStack, entryProvider, entry<Route>를 직접 사용하고 화면 이동은 add, 뒤로 가기는 removeLastOrNull로 처리합니다.
 
 ## 화면 이동
+
+![실제 앱의 피처 간 이동과 대응하는 코드](docs/animations/navigation-flow.gif)
+
+상품 목록 → 상품 상세 → 장바구니 → 상품 상세 재진입 → 주문 확인 → 주문 완료 → 상품 목록.
 
 ```mermaid
 flowchart LR

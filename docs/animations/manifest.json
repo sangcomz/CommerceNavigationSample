@@ -1,0 +1,132 @@
+{
+  "sourceCommit": "13b8c93a8a2edafb3b58b3a978d9a65df63457c6",
+  "screen": {
+    "kind": "Android emulator recording",
+    "api": 36,
+    "size": [
+      720,
+      1600
+    ],
+    "playbackSpeed": 1.6,
+    "recordedSeconds": 69.54872934520245,
+    "flow": [
+      "intro",
+      "product",
+      "add",
+      "cart",
+      "cross",
+      "back",
+      "checkout",
+      "complete",
+      "home"
+    ]
+  },
+  "sourceExcerpts": [
+    {
+      "path": "core/navigation/src/main/java/io/github/sangcomz/commercenavigation/core/navigation/FeatureEntryPointFactory.kt",
+      "firstLine": 2,
+      "lastLine": 5,
+      "sha256": "f80acfc761ac3a6292f1c038cfc84f7fd3ec2d3f3054806f71a9503db4b55554"
+    },
+    {
+      "path": "feature/product/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/product/presentation/navigation/ProductEntryPointFactory.kt",
+      "firstLine": 14,
+      "lastLine": 21,
+      "sha256": "f12ada7aceeb3277166b59bc075449b4df6c0a97c58735516292ef0b1a72f5a9"
+    },
+    {
+      "path": "feature/product/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/product/presentation/detail/ProductDetailViewModel.kt",
+      "firstLine": 12,
+      "lastLine": 16,
+      "sha256": "e2de49d4573f07b9ee137a2bcc015a3d49a3af6dfb22f6a86b3f6b8ca02cb982"
+    },
+    {
+      "path": "feature/product/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/product/presentation/navigation/ProductEntryPointFactory.kt",
+      "firstLine": 24,
+      "lastLine": 31,
+      "sha256": "f12ada7aceeb3277166b59bc075449b4df6c0a97c58735516292ef0b1a72f5a9"
+    },
+    {
+      "path": "feature/cart/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/cart/presentation/navigation/CartEntryPointFactory.kt",
+      "firstLine": 14,
+      "lastLine": 22,
+      "sha256": "17853170ee1de34ef0bc661df879d5642036c549f7a8bbfb5473b8ba7b771823"
+    },
+    {
+      "path": "feature/product/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/product/presentation/navigation/ProductRouteProviderImpl.kt",
+      "firstLine": 6,
+      "lastLine": 10,
+      "sha256": "ac99c118e0f928144898afb2313cf00c6e1a1c100063a891355d43dc8d88b6b8"
+    },
+    {
+      "path": "feature/product/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/product/presentation/navigation/ProductEntryPointFactory.kt",
+      "firstLine": 23,
+      "lastLine": 31,
+      "sha256": "f12ada7aceeb3277166b59bc075449b4df6c0a97c58735516292ef0b1a72f5a9"
+    },
+    {
+      "path": "feature/product/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/product/presentation/navigation/ProductEntryPointFactory.kt",
+      "firstLine": 24,
+      "lastLine": 32,
+      "sha256": "f12ada7aceeb3277166b59bc075449b4df6c0a97c58735516292ef0b1a72f5a9"
+    },
+    {
+      "path": "feature/cart/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/cart/presentation/navigation/CartEntryPointFactory.kt",
+      "firstLine": 15,
+      "lastLine": 23,
+      "sha256": "17853170ee1de34ef0bc661df879d5642036c549f7a8bbfb5473b8ba7b771823"
+    },
+    {
+      "path": "feature/order/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/order/presentation/navigation/OrderEntryPointFactory.kt",
+      "firstLine": 10,
+      "lastLine": 19,
+      "sha256": "522ec0555ef172bfac6834c8212bcb2a5ba1fcb82be9dfc7fca48e192fa3f1cd"
+    },
+    {
+      "path": "feature/order/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/order/presentation/navigation/OrderEntryPointFactory.kt",
+      "firstLine": 22,
+      "lastLine": 31,
+      "sha256": "522ec0555ef172bfac6834c8212bcb2a5ba1fcb82be9dfc7fca48e192fa3f1cd"
+    },
+    {
+      "path": "core/navigation/src/main/java/io/github/sangcomz/commercenavigation/core/navigation/FeatureEntryPointFactory.kt",
+      "firstLine": 1,
+      "lastLine": 5,
+      "sha256": "f80acfc761ac3a6292f1c038cfc84f7fd3ec2d3f3054806f71a9503db4b55554"
+    },
+    {
+      "path": "feature/product/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/product/presentation/navigation/ProductNavigationModule.kt",
+      "firstLine": 14,
+      "lastLine": 20,
+      "sha256": "38b94bff4e7049f58fb7af98a7b4b2b7ed5a011f9ed675887e1087beca1c551f"
+    },
+    {
+      "path": "app/src/main/java/io/github/sangcomz/commercenavigation/navigation/NavigationEntryPointRegistry.kt",
+      "firstLine": 7,
+      "lastLine": 13,
+      "sha256": "4443be1470a3ad96d85b399115980ef21d278e00671ecca19ea2a4bc1cb785b8"
+    },
+    {
+      "path": "feature/product/presentation/src/main/java/io/github/sangcomz/commercenavigation/feature/product/presentation/navigation/ProductEntryPointFactory.kt",
+      "firstLine": 13,
+      "lastLine": 23,
+      "sha256": "f12ada7aceeb3277166b59bc075449b4df6c0a97c58735516292ef0b1a72f5a9"
+    },
+    {
+      "path": "app/src/main/java/io/github/sangcomz/commercenavigation/navigation/AppNavHost.kt",
+      "firstLine": 15,
+      "lastLine": 27,
+      "sha256": "9ffa93488b718b4018cf5c41d61697f5f765181e5b069eaf7ff3e509eec64001"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/animations/navigation-flow.gif",
+      "sha256": "b514f09b71cf4971990ff1f9e682311aba47f3684e59d1d9cc1e03a346816938"
+    },
+    {
+      "path": "docs/animations/registration-flow.gif",
+      "sha256": "c6c42fbdec7eea5a0cbae6804b8f3d159cd76dc0bdaba8b1c21fdac376da3037"
+    }
+  ]
+}
